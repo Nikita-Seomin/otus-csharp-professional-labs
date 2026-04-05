@@ -26,15 +26,15 @@ public sealed class CsvReflectionSerializer
         ArgumentException.ThrowIfNullOrWhiteSpace(csv);
 
         using var reader = new StringReader(csv);
-        var headerLine = reader.ReadLine() ?? throw new FormatException("CSV должен содержать строку заголовков.");
-        var valueLine = reader.ReadLine() ?? throw new FormatException("CSV должен содержать строку значений.");
+        var headerLine = reader.ReadLine() ?? throw new FormatException("CSV РґРѕР»Р¶РµРЅ СЃРѕРґРµСЂР¶Р°С‚СЊ СЃС‚СЂРѕРєСѓ Р·Р°РіРѕР»РѕРІРєРѕРІ.");
+        var valueLine = reader.ReadLine() ?? throw new FormatException("CSV РґРѕР»Р¶РµРЅ СЃРѕРґРµСЂР¶Р°С‚СЊ СЃС‚СЂРѕРєСѓ Р·РЅР°С‡РµРЅРёР№.");
 
         var headers = ParseCsvLine(headerLine);
         var values = ParseCsvLine(valueLine);
 
         if (headers.Count != values.Count)
         {
-            throw new FormatException("Количество заголовков и значений в CSV не совпадает.");
+            throw new FormatException("РљРѕР»РёС‡РµСЃС‚РІРѕ Р·Р°РіРѕР»РѕРІРєРѕРІ Рё Р·РЅР°С‡РµРЅРёР№ РІ CSV РЅРµ СЃРѕРІРїР°РґР°РµС‚.");
         }
 
         var metadata = GetMetadata(typeof(T));
@@ -96,7 +96,7 @@ public sealed class CsvReflectionSerializer
 
             if (uniqueMembers.Length == 0)
             {
-                throw new InvalidOperationException($"Тип '{currentType.Name}' не содержит доступных для сериализации полей или свойств.");
+                throw new InvalidOperationException($"РўРёРї '{currentType.Name}' РЅРµ СЃРѕРґРµСЂР¶РёС‚ РґРѕСЃС‚СѓРїРЅС‹С… РґР»СЏ СЃРµСЂРёР°Р»РёР·Р°С†РёРё РїРѕР»РµР№ РёР»Рё СЃРІРѕР№СЃС‚РІ.");
             }
 
             var membersByName = uniqueMembers.ToDictionary(member => member.Name, StringComparer.OrdinalIgnoreCase);
@@ -243,7 +243,7 @@ public sealed class CsvReflectionSerializer
 
         if (inQuotes)
         {
-            throw new FormatException("Некорректная CSV-строка: не закрыта кавычка.");
+            throw new FormatException("РќРµРєРѕСЂСЂРµРєС‚РЅР°СЏ CSV-СЃС‚СЂРѕРєР°: РЅРµ Р·Р°РєСЂС‹С‚Р° РєР°РІС‹С‡РєР°.");
         }
 
         values.Add(current.ToString());

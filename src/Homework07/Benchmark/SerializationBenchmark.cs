@@ -18,7 +18,7 @@ public sealed class SerializationBenchmark(CsvReflectionSerializer csvSerializer
 
         if (iterations <= 0)
         {
-            throw new ArgumentOutOfRangeException(nameof(iterations), iterations, "Количество итераций должно быть больше нуля.");
+            throw new ArgumentOutOfRangeException(nameof(iterations), iterations, "РљРѕР»РёС‡РµСЃС‚РІРѕ РёС‚РµСЂР°С†РёР№ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ Р±РѕР»СЊС€Рµ РЅСѓР»СЏ.");
         }
 
         Warmup(source);
@@ -57,14 +57,14 @@ public sealed class SerializationBenchmark(CsvReflectionSerializer csvSerializer
                 var value = JsonSerializer.Deserialize<F>(jsonPayload, _jsonOptions);
                 if (value is null)
                 {
-                    throw new InvalidOperationException("System.Text.Json вернул null при десериализации.");
+                    throw new InvalidOperationException("System.Text.Json РІРµСЂРЅСѓР» null РїСЂРё РґРµСЃРµСЂРёР°Р»РёР·Р°С†РёРё.");
                 }
             }
         });
 
         var consoleWriteMs = Measure(() =>
         {
-            Console.WriteLine($"Полученная CSV-строка:{Environment.NewLine}{csvPayload}");
+            Console.WriteLine($"РџРѕР»СѓС‡РµРЅРЅР°СЏ CSV-СЃС‚СЂРѕРєР°:{Environment.NewLine}{csvPayload}");
         });
 
         return new BenchmarkResult(
