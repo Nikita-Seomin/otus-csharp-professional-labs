@@ -1,0 +1,9 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=388c0b59_002D0a7a_002D4b3d_002Dbedb_002Db54d630e9966/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="LiveRecordingCloneTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;xUnit::08F29792-6013-43ED-BA8B-C584A091A6F9::net10.0::Homework05Tests.LiveRecordingCloneTests&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+    &lt;Project Location="D:\study\otus\otus-csharp-professional-labs\tests\Homework06.Tests" Presentation="&amp;lt;tests&amp;gt;\&amp;lt;Homework06.Tests&amp;gt;" /&gt;&#xD;
+  &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
